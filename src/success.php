@@ -13,10 +13,15 @@
         <h2>PDF to Text Converter</h2>
         <div class="div">
                 <p>Click here to download converted file</p>
-                <a href = "/output/{$output}" download target = "_blank">
+                <?php
+                    $converted_file = $_GET['converted_file'];
+                    echo 
+                    '<a href = "download.php?converted_file='. $converted_file .'" download target = "_blank">
                     <button type="button" class="btn btn-primary">Download</button>
-                </a>
-                <a href="index.php"><button type="button" class="btn btn-primary">Convert Again</button></a>
+                    </a>';
+                ?>
+                
+                <a href="index.html"><button type="button" class="btn btn-primary">Convert Again</button></a>
             </div>
     </div>
 </body>

@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>PDF to Text Converter</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-    <div class="PDFToText">
+      <div class="PDFToText">
         <h2>PDF to Text Converter</h2>
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            Select PDF file to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload File" name="submit">
+          Select PDF file to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload" multiple />
+          <input type="submit" name="submit" />
         </form>
-    </div>
-    <div class="TextToPDF">
+      </div>
+      <div class="TextToPDF">
         <h2>Text to PDF Converter</h2>
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            Select Text file to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload File" name="submit">
+          Select Text file to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload" multiple />
+          <input type="submit" name="submit" />
         </form>
+      </div>
     </div>
-    </div>
-</body>
-
+  </body>
 </html>

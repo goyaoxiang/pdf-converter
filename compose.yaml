@@ -1,0 +1,10 @@
+version: '3'
+services:
+  apache-service:
+    container_name: textpdf_converter
+    image: httpd:latest
+    ports:
+      - 8089:80
+    volumes:
+      - ./src:/usr/local/apache2/htdocs/
+

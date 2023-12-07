@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class PDFToText {
     public static void main(String[] args) {
         String inputFilePath = args[0];
-        String outputFileName = args[1];
+        String outputFilePath = args[1];
         PDDocument doc = null;
         String text = null;
 
@@ -29,7 +29,7 @@ public class PDFToText {
             }
         }
 
-        try (PrintWriter out = new PrintWriter(outputFileName)) { // the output text file
+        try (PrintWriter out = new PrintWriter(outputFilePath)) { // the output text file
             out.println(text);
         } catch (IOException e) {
             e.printStackTrace();
