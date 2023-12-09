@@ -1,10 +1,13 @@
 version: '3'
 services:
-  apache-service:
+  apache-php-java:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: textpdf_converter:latest
     container_name: textpdf_converter
-    image: httpd:latest
     ports:
       - 8089:80
     volumes:
-      - ./src:/usr/local/apache2/htdocs/
+      - ./src:/var/www/html
 

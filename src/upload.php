@@ -1,7 +1,9 @@
 <?php
 
-if(isset($_FILES['fileToUpload'])){
-    $total = count($_FILES['fileToUpload']['name']);
+if(isset($_FILES["fileToUpload"]) &&  (!empty($_FILES["fileToUpload"]))){
+
+    $total = is_array($_FILES["fileToUpload"]["name"]) ? count($_FILES["fileToUpload"]["name"]) : 1;
+
     $location_to_upload = "../uploads/";
     $location_to_output = "../outputs/";
     $output_array = array();
@@ -41,13 +43,15 @@ if(isset($_FILES['fileToUpload'])){
                 array_push($output_array, $converted_file_name);
             }
         }else{
-            header("Location: index.php?error=invalid_file_type");
+            header("Location: fail.html?error=invalid_file_type");
         }
     }
 
-    header("Location: success.php?converted_file=$output_array");
+    $converted_files = implode(",", $output_array);
+    header("Location: success.php?converted_file=$converted_files");
+
 
 }else{
-    header("Location: index.php?error=invalid_file_type");
+    header("Location: fail.html?error=invalid_upload");
 }
 ?>

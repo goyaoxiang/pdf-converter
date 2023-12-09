@@ -1,5 +1,5 @@
 # Use an official PHP runtime as a parent image
-FROM php:8.1.2-apache
+FROM php:8.1-apache
 
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
@@ -10,8 +10,10 @@ COPY . /var/www/html
 # Install Java Runtime Environment (JRE)
 RUN apt-get update && \
     apt-get install -y default-jre && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y default-jdk
 
-# Expose port 80 for Apache
-EXPOSE 80
+# temporary
+RUN mkdir -p /var/www/html/uploads && \
+    chown -R www-data:www-data /var/www/html/uploads && \
+    chmod 755 /var/www/html/uploads
+
