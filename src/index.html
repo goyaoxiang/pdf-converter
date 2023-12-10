@@ -3,124 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File Converter</title>
+    <title>DOCBLEND CONVERTER</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="success.css" />
   <body>
-    <section class="header"><h1>Text File / PDF Converter</h1></section>
+    <section class="deco">
+      <img src="./img/cubes1.png" alt="cubes1" id="cubes1" />
+      <img src="./img/cubes2.png" alt="cubes2" id="cubes2" />
+      <img src="./img/converted.png" alt="converted" id="converted" />
+      <img src="./img/pdfimg.png" alt="pdfimg" id="pdfimg" />
+      <a href="#nav"> <img src="./img/up.png" alt="up" id="up" /></a>
+    </section>
+
+    <section class="nav" id="nav">
+      <div class="logo">
+        <ul>
+          <li>
+            <img src="./img/file.png" alt="LOGO" />
+            <span class="logo-name">DOCBLEND</span>
+          </li>
+          <li>
+            <span class="about"><a href="#team">ABOUT US</a></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="convert wrapper">
-      <div class="top">
-        <ul>
-          <li><img src="./img/TXT.png" alt="TXT" /></li>
-          <li><img src="./img/PDF.png" alt="PDF" /></li>
-        </ul>
-      </div>
-      <div class="bottom">
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-          <label for="fileToUpload"
-            ><div class="btn uploadFile">Select Files to Upload</div>
-          </label>
-          <input
-            type="file"
-            id="fileToUpload"
-            name="fileToUpload[]"
-            accept=".pdf,.txt"
-            style="display: none"
-            multiple
-            required
-          />
+      <div class="title">DOCBLEND CONVERTER</div>
+      <div class="desc">Easier & faster than ever before</div>
+      <div class="upload">
+        <div class="top">
+          <ul>
+            <li><img src="./img/pdftxtfile.png" alt="" /></li>
+          </ul>
 
-          <input
-            class="btn submitFile"
-            type="submit"
-            name="submit"
-            value="Convert"
-          />
-        </form>
-      </div>
-    </section>
+          <!-- <div class="select">Select files to upload</div> -->
+          <form action="#">
+            <label for="fileInput"
+              ><div class="select">Select Files to Upload</div>
+            </label>
+            <input
+              type="file"
+              id="fileInput"
+              name="files[]"
+              style="display: none"
+              multiple
+            />
+          </form>
 
-    <section class="pendingFiles">
-      <div class="Frame">
-        <div class="uploaded">
-          <p>UPLOADED FILE(S)</p>
+          <div class="run">Convert</div>
         </div>
-        <div class="lists">
-          <!-- PHP Here -->
+        <div class="bottom">
+          <div class="subtitle">UPLOADED FILE(s)</div>
+          <div class="sub-desc">Your uploaded files will appear here...</div>
+          <div class="lists">
+            <ul id="list"></ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="instruct">
-      <div class="top wrapper"><p>How to use the converter?</p></div>
-      <div class="bottom wrapper">
+    <section class="guide wrapper">
+      <div class="title">How to use the converter</div>
+      <div class="step">
         <ul>
           <li>
-            <div class="list">1</div>
-            <p>Select the PDF/.txt file(s) you wish to convert.</p>
+            <span>1</span>
+            Select file(s) you wish to convert.Select file(s) you wish to
+            convert.
           </li>
           <li>
-            <div class="list">2</div>
-            <p>
-              Our converter will convert your document to PDF/.txt file(s) in
-              seconds.
-            </p>
+            <span>2</span>
+            Our converter will convert your document to PDF/.txt file(s) in
+            seconds.
           </li>
           <li>
-            <div class="list">3</div>
-            <p>
-              Your new document will be ready to download immediately. Just
-              press download to obtain your file.
-            </p>
+            <span>3</span>
+            Your new document will be ready to download immediately. Just press
+            download to obtain your file.
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="team wrapper">
-      <div class="title"><p>OUR TEAM</p></div>
-      <div class="member">
-        <ul>
-          <li>
-            <div class="target">
-              <div class="frame">
-                <img src="./img/YC.png" alt="img" />
-              </div>
-              <p>CHOONG YEW CHUNG</p>
-              <p>163991</p>
-            </div>
-          </li>
-          <li>
-            <div class="target">
-              <div class="frame">
-                <img src="./img/JY.png" alt="img" />
-              </div>
-              <p>CHOONG JUN YANG</p>
-              <p>163522</p>
-            </div>
-          </li>
-          <li>
-            <div class="target">
-              <div class="frame">
-                <img src="./img/CH.png" alt="img" />
-              </div>
-              <p>CHENG CHEA HAO</p>
-              <p>163336</p>
-            </div>
-          </li>
-          <li>
-            <div class="target">
-              <div class="frame">
-                <img src="./img/YX.png" alt="img" />
-              </div>
-              <p>GO YAO XIANG</p>
-              <p>163130</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <section class="team wrapper" id="team">
+      <h2>Our Team</h2>
+      <ul>
+        <li>
+          <div class="circle"><img src="./img/YC.png" alt="CYC" /></div>
+          <div class="name">CHOONG YEW CHUNG</div>
+          <div class="matric-no">163391</div>
+        </li>
+        <li>
+          <div class="circle"><img src="./img/JY.png" alt="CYC" /></div>
+          <div class="name">CHOONG JUN YANG</div>
+          <div class="matric-no">163391</div>
+        </li>
+        <li>
+          <div class="circle"><img src="./img/CH.png" alt="CYC" /></div>
+          <div class="name">CHENG CHEA HAO</div>
+          <div class="matric-no">163336</div>
+        </li>
+        <li>
+          <div class="circle"><img src="./img/YX.png" alt="CYC" /></div>
+          <div class="name">GO YAO XIANG</div>
+          <div class="matric-no">163130</div>
+        </li>
+      </ul>
     </section>
   </body>
+  <script>
+    document.getElementById('fileInput').onchange = () => {
+      let ul = document.getElementById('list')
+      let files = document.getElementById('fileInput').files
+      ul.style.display = 'flex'
+
+      for (let i = 0; i < files.length; i++) {
+        let li = document.createElement('li')
+
+        // Create an image element
+        let img = document.createElement('img')
+        img.src = './img/converted.png' // Replace with your image path
+        img.alt = files[i].name
+
+        // Apply styling to resize the image
+        img.style.width = '30px' // Set the desired width
+        img.style.height = '30px' // Set the desired height
+        img.style.paddingRight = '10px'
+
+        // Append image and file name to the list item
+        li.appendChild(img)
+        li.appendChild(document.createTextNode(files[i].name))
+
+        // Append list item to the unordered list
+        ul.appendChild(li)
+      }
+    }
+  </script>
 </html>
