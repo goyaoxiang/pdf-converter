@@ -31,6 +31,9 @@
   padding-left: 222px;
   width: 200px;
 }
+.convert .top li {
+  list-style: none;
+}
 .convert .select,
 .convert .run {
   margin-top: 50px;
