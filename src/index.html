@@ -40,20 +40,23 @@
           </ul>
 
           <!-- <div class="select">Select files to upload</div> -->
-          <form action="#">
-            <label for="fileInput"
+          <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="fileToUpload"
               ><div class="select">Select Files to Upload</div>
             </label>
             <input
               type="file"
-              id="fileInput"
-              name="files[]"
+              id="fileToUpload"
+              name="fileToUpload[]"
               style="display: none"
               multiple
             />
+            <!-- accept=".pdf,.txt"
+            required -->
+            <input class="run" type="submit" value="Convert" name="submit" />
           </form>
 
-          <div class="run">Convert</div>
+          <!-- <div class="run">Convert</div> -->
         </div>
         <div class="bottom">
           <div class="subtitle">UPLOADED FILE(s)</div>
@@ -115,31 +118,31 @@
     </section>
   </body>
   <script>
-    document.getElementById('fileInput').onchange = () => {
-      let ul = document.getElementById('list')
-      let files = document.getElementById('fileInput').files
-      ul.style.display = 'flex'
+    document.getElementById("fileToUpload").onchange = () => {
+      let ul = document.getElementById("list");
+      let files = document.getElementById("fileToUpload").files;
+      ul.style.display = "flex";
 
       for (let i = 0; i < files.length; i++) {
-        let li = document.createElement('li')
+        let li = document.createElement("li");
 
         // Create an image element
-        let img = document.createElement('img')
-        img.src = './img/converted.png' // Replace with your image path
-        img.alt = files[i].name
+        let img = document.createElement("img");
+        img.src = "./img/converted.png"; // Replace with your image path
+        img.alt = files[i].name;
 
         // Apply styling to resize the image
-        img.style.width = '30px' // Set the desired width
-        img.style.height = '30px' // Set the desired height
-        img.style.paddingRight = '10px'
+        img.style.width = "30px"; // Set the desired width
+        img.style.height = "30px"; // Set the desired height
+        img.style.paddingRight = "10px";
 
         // Append image and file name to the list item
-        li.appendChild(img)
-        li.appendChild(document.createTextNode(files[i].name))
+        li.appendChild(img);
+        li.appendChild(document.createTextNode(files[i].name));
 
         // Append list item to the unordered list
-        ul.appendChild(li)
+        ul.appendChild(li);
       }
-    }
+    };
   </script>
 </html>

@@ -39,6 +39,7 @@ public class TextToPDF {
                     content = new PDPageContentStream(doc, page);
                     content.beginText();
                     content.setFont(new PDType1Font(Standard14Fonts.FontName.HELVETICA_BOLD), 12);
+                    content.newLineAtOffset(100, 700);
                     y = 700; // reset y position for the new page
                 }
                 String[] words = line.split(" ");

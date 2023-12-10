@@ -31,6 +31,9 @@ if(isset($_FILES["fileToUpload"]) &&  (!empty($_FILES["fileToUpload"]))){
                 exec("java -jar TextToPDF.jar $convert_path $output_path");
 
                 array_push($output_array, $converted_file_name);
+            } else {
+                header("Location: fail.html?error=upload_failed");
+                exit();
             }
         }elseif($upload_file_extension == "pdf"){
             if(move_uploaded_file($file_tmp_name, $location_to_upload . $upload_file_name_without_space)){
@@ -41,9 +44,16 @@ if(isset($_FILES["fileToUpload"]) &&  (!empty($_FILES["fileToUpload"]))){
                 exec("java -jar PDFToText.jar $convert_path $output_path");
 
                 array_push($output_array, $converted_file_name);
+            } else {
+                header("Location: fail.html?error=upload_failed");
+                exit();
             }
+        }elseif($upload_file_extension == ""){
+            header("Location: fail.html?error=invalid_file_extension");
+            exit();
         }else{
             header("Location: fail.html?error=invalid_file_type");
+            exit();
         }
     }
 
