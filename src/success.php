@@ -6,6 +6,7 @@
     <title>Success</title>
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="success.css" />
+    <link rel="stylesheet" href="animation.css" />
   </head>
   <body>
     <section class="deco">
@@ -24,7 +25,7 @@
             <span class="logo-name">DOCBLEND</span>
           </li>
           <li>
-            <span class="about"><a href="#team">ABOUT US</a></span>
+            <span class="about"><a href="index.html#team">ABOUT US</a></span>
           </li>
         </ul>
       </div>
@@ -33,11 +34,11 @@
     <section class="congrat wrapper">
       <div class="top">
         <div class="inner-top">
-          <div class="tick"><img src="./img/pdfimg.png" alt="tick" /></div>
+          <div class="loader"></div>
           <div class="title">CONVERSION SUCCESSFUL</div>
         </div>
         <div class="inner-bottom">
-          <div class="download">Download your file(s)</div>
+          <div class="download" id='download-all'>Download all file(s)</div>
           <div class="again">
             <a href="index.html">Convert again</a>
           </div>
@@ -55,11 +56,42 @@
             
             for($i=0; $i<$total; $i++){
                 echo 
-                '<a href="download.php?converted_file='. $converted_files[$i] .'" download target = "_blank">'. $converted_files[$i] .'</a>';
+                '<li><a href="download.php?converted_file='. $converted_files[$i] .'" download target = "_blank">'. $converted_files[$i] .'</a></li>';
             }
           ?></ul>
         </div>
       </div>
     </section>
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+    $("#download-all").click(function () {
+    // get all the links in the list
+    var links = $("#list a");
+
+    // loop through each link and click it
+    links.each(function () {
+      $(this)[0].click();
+        });
+      });
+    });
+  </script>
+  <script>
+    const loader = document.querySelector('.loader');
+
+    function fail() {
+      loader.classList.add('fail');
+    }
+    function success() {
+      loader.classList.add('success');
+    }
+
+    function reset() {
+      loader.classList.remove('fail')
+    }
+    setTimeout(() => success(), 2000);
+  </script>
+ 
 </html>

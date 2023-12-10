@@ -21,7 +21,7 @@ body {
   height: 100px;
 }
 .congrat .top .inner-top .title {
-  padding-left: 10px;
+  padding-left: 20px;
   color: #fff;
   text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
   font-family: Poppins;
@@ -47,12 +47,17 @@ body {
   font-style: normal;
   font-weight: lighter;
   line-height: 54px;
+  text-decoration: none;
 }
 .congrat .again {
   margin-top: 30px;
 }
+.congrat .again a {
+  text-decoration: none;
+  color: #f9f7f7;
+}
 .congrat .download:hover,
-.congrat .again:hover {
+.congrat .again a:hover {
   color: grey;
   cursor: pointer;
 }
@@ -63,7 +68,7 @@ body {
   margin-top: 22px;
   padding: 24px 60px;
   width: 645px;
-  height: 370px;
+  height: 500px;
   border-radius: 15px;
   background: rgba(219, 226, 239, 0.1);
 }
@@ -87,16 +92,36 @@ body {
   font-weight: lighter;
   line-height: normal;
 }
+.congrat .lists {
+  display: flex;
+  height: 40px;
+}
 .congrat .lists ul {
   display: flex;
   flex-direction: column;
 }
 .congrat .lists ul li {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  padding: 10px 0px;
+  list-style: none;
+  padding: 10px 20px;
   margin: 5px 20px;
-  font-size: 18px;
+}
+.congrat .lists ul a {
+  display: inline-block;
+  align-items: center;
+  font-size: 22px;
   color: white;
+}
+.congrat .lists ul a:hover {
+  color: grey;
+  cursor: pointer;
+}
+.congrat .lists ul a::before {
+  display: inline-block;
+  margin-right: 15px;
+  content: "";
+  background-image: url(./img/converted.png);
+  background-size: 100% 100%;
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
 }

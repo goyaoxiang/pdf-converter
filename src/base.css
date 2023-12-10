@@ -44,15 +44,15 @@ body {
 .deco #pdfimg {
   position: absolute;
   top: 220px;
-  left: 1100px;
+  right: 180px;
   width: 250px;
   height: 250px;
   opacity: 0.7;
 }
 .deco #up {
   position: fixed;
-  top: 500px;
-  left: 1400px;
+  top: 600px;
+  right: 100px;
   width: 50px;
   height: 50px;
   border-radius: 50%;

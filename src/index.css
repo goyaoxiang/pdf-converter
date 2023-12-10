@@ -50,6 +50,7 @@
 }
 .convert .run {
   margin-top: 30px;
+  border: 0px;
 }
 .convert .select:hover,
 .convert .run:hover {

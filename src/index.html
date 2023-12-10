@@ -39,7 +39,6 @@
             <li><img src="./img/pdftxtfile.png" alt="" /></li>
           </ul>
 
-          <!-- <div class="select">Select files to upload</div> -->
           <form action="upload.php" method="post" enctype="multipart/form-data">
             <label for="fileToUpload"
               ><div class="select">Select Files to Upload</div>
@@ -51,12 +50,9 @@
               style="display: none"
               multiple
             />
-            <!-- accept=".pdf,.txt"
-            required -->
+
             <input class="run" type="submit" value="Convert" name="submit" />
           </form>
-
-          <!-- <div class="run">Convert</div> -->
         </div>
         <div class="bottom">
           <div class="subtitle">UPLOADED FILE(s)</div>
@@ -122,6 +118,10 @@
       let ul = document.getElementById("list");
       let files = document.getElementById("fileToUpload").files;
       ul.style.display = "flex";
+
+      if (document.getElementById("list").hasChildNodes()) {
+        document.getElementById("list").innerHTML = "";
+      }
 
       for (let i = 0; i < files.length; i++) {
         let li = document.createElement("li");
